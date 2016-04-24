@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.techawesome.jayce.aeroscape.landing">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo"/>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-20dp"
+                android:src="@drawable/font"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#5e5e5e"
+            android:text="Please enter your flight number:"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#5e5e5e"
+            android:text="Flight number can be found on your Itenerary Receipt/Ticket."
+            android:textStyle="italic"
+            android:textSize="11dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="#61ffffff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                >
+                <EditText
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="40dp"
+                    android:textColor="#5e5e5e"
+                    android:hint="AA"
+                    android:id="@+id/letter"
+                    android:maxLines="1"
+                    android:maxLength="3"
+                    android:textStyle="bold"
+                    android:imeOptions="actionNext"
+                    android:gravity="center"
+                    android:inputType="textCapCharacters"
+                    android:textColorHint="#aeffffff"
+                    android:background="@android:color/transparent"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="#61ffffff"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                >
+                <EditText
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="40dp"
+                    android:textColor="#5e5e5e"
+                    android:inputType="numberDecimal"
+                    android:hint="111"
+                    android:id="@+id/number"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:textStyle="bold"
+                    android:maxLength="4"
+                    android:gravity="center"
+                    android:textColorHint="#aeffffff"
+                    android:background="@android:color/transparent"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#5e5e5e"
+            android:text="Select the day of your departure:"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#61ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            >
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="April 23, 2016 (Today)"
+                android:id="@+id/date1"
+                android:textColor="#5e5e5e"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#61ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            >
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="April 24, 2016"
+                android:id="@+id/date2"
+                android:textColor="#5e5e5e"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#61ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            >
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="April 25, 2016"
+                android:id="@+id/date3"
+                android:textColor="#5e5e5e"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#5e5e5e"
+            android:textStyle="italic"
+            android:text="Note: The app can only predict 3 days before your flight. Regular checking of your flight status before the departure is recommended for more accuracy."
+            android:textSize="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rippledarkgreen"
+            android:layout_marginLeft="10dp"
+            android:onClick="process"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:text="Show Result"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#2d9c8e"
+                android:text="© 2016 PillowTalk.ph Technologies"
+                android:textSize="10dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
